@@ -1,0 +1,29 @@
+
+<h1>Componente Padre</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Salary</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <h2>tbody</h2>
+    <tr *ngFor="let employee of (employees | async).employees; let i = index">
+      <th scope="row">{{i}}</th>
+      <td>{{employee.name}}</td>
+      <td>{{employee.age}}</td>
+      <td>{{employee.salary}}</td>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="view(i)">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="edit(i)">Edit</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(i)">Delete</button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
